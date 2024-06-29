@@ -13,7 +13,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@master
-        uses: oven-sh/setup-bun@v1
         with:
           persist-credentials: false
 
@@ -23,14 +22,17 @@ jobs:
       # - name: Source Bun
       #   run: source /home/runner/.bashrc
 
-      - name: Install Packages
-        run: bun i
+      - name: Install, Lint, Build
+        uses: oven-sh/setup-bun@v1
+      - run: bun install
 
       - name: Lint
-        run: bun lint
+        uses: oven-sh/setup-bun@v1
+      - run: bun lint
 
       - name: Build
-        run: bun build
+        uses: oven-sh/setup-bun@v1
+      - run: bun build
         # env:
           # NODE_ENV: production
         
