@@ -13,14 +13,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@master
+        uses: oven-sh/setup-bun@v1
         with:
           persist-credentials: false
 
-      - name: Install Bun
-        run: curl -fsSL bun.sh/install | bash
+      # - name: Install Bun
+      #   run: curl -fsSL bun.sh/install | bash
 
-      - name: Source Bun
-        run: source /home/runner/.bashrc
+      # - name: Source Bun
+      #   run: source /home/runner/.bashrc
 
       - name: Install Packages
         run: bun i
