@@ -16,7 +16,10 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Install
+      - name: Install Bun
+        run: curl -fsSL bun.sh/install | bash
+
+      - name: Install Packages
         run: bun i
 
       - name: Lint
