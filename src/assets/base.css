@@ -38,7 +38,7 @@
     --section-gap: 160px;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) { */
     :root {
         --color-primary: var(--color-primary-light);
         --color-secondary: var(--color-secondary-light);
@@ -54,7 +54,7 @@
         --color-heading: var(--color-white);
         --color-text: var(--color-white);
     }
-}
+/* } */
 
 *,
 *::before,
