@@ -1,77 +1,77 @@
 /* color palette from <https://github.com/vuejs/theme> */
 :root {
-  --color-primary: #2684ba;
-  /* --color-primary */
-  /* https://coolors.co/67b3e0-154866-ed5a8d-6e0c2f-e0ca00 */
-  --color-secondary: #e0ca00;
-  --color-tertiary: #ca1655;
-  --color-black: #1e1e1f;
-  --color-græy-dark: #565657;
-  --color-græy: #8e8e8f;
-  --color-græy-light: #c6c6c7;
-  --color-white: #fefeff;
+    --color-primary: #2684ba;
+    /* --color-primary */
+    /* https://coolors.co/67b3e0-154866-ed5a8d-6e0c2f-e0ca00 */
+    --color-secondary: #e0ca00;
+    --color-tertiary: #ca1655;
+    --color-black: #1e1e1f;
+    --color-græy-dark: #565657;
+    --color-græy: #8e8e8f;
+    --color-græy-light: #c6c6c7;
+    --color-white: #fefeff;
 }
 
 /* semantic color variables for this project */
 :root {
-  --color-background: var(--color-white);
-  --color-background-soft: var(--color-græy-light);
-  --color-background-mute: var(--color-græy-light);
+    --color-background: var(--color-white);
+    --color-background-soft: var(--color-græy-light);
+    --color-background-mute: var(--color-græy-light);
 
-  --color-border: var(--color-græy-dark);
-  --color-border-hover: var(--color-black);
+    --color-border: var(--color-græy-dark);
+    --color-border-hover: var(--color-black);
 
-  --color-heading: var(--color-black);
-  --color-text: var(--color-black);
+    --color-heading: var(--color-black);
+    --color-text: var(--color-black);
 
-  --section-gap: 160px;
+    --section-gap: 160px;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --color-background: var(--color-black);
-    --color-background-soft: var(--color-græy-dark);
-    --color-background-mute: var(--color-græy-dark);
+    :root {
+        --color-background: var(--color-black);
+        --color-background-soft: var(--color-græy-dark);
+        --color-background-mute: var(--color-græy-dark);
 
-    --color-border: var(--color-græy-light);
-    --color-border-hover: var(--color-white);
+        --color-border: var(--color-græy-light);
+        --color-border-hover: var(--color-white);
 
-    --color-heading: var(--color-white);
-    --color-text: var(--color-white);
-  }
+        --color-heading: var(--color-white);
+        --color-text: var(--color-white);
+    }
 }
 
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
-  margin: 0;
-  font-weight: normal;
+    box-sizing: border-box;
+    margin: 0;
+    font-weight: normal;
 }
 
 body {
-  min-height: 100vh;
-  color: var(--color-text);
-  background: var(--color-background);
-  transition:
-    color 0.5s,
-    background-color 0.5s;
-  line-height: 1.6;
-  font-family:
-    Inter,
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
-    sans-serif;
-  font-size: 15px;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    color: var(--color-text);
+    background: var(--color-background);
+    transition:
+        color 0.5s,
+        background-color 0.5s;
+    line-height: 1.6;
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        'Segoe UI',
+        Roboto,
+        Oxygen,
+        Ubuntu,
+        Cantarell,
+        'Fira Sans',
+        'Droid Sans',
+        'Helvetica Neue',
+        sans-serif;
+    font-size: 15px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
