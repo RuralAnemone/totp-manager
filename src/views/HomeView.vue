@@ -1,6 +1,6 @@
 <script setup>
-import { computed, ref } from 'vue';
-import TOTPEntry from "@/components/TOTPEntry.vue"
+import { computed, ref } from "vue";
+import TOTPEntry from "@/components/TOTPEntry.vue";
 import * as OTPAuth from "otpauth";
 
 let id = ref(0);
@@ -13,8 +13,8 @@ const entries = ref([
         digits: 6,
         period: 30,
         algorithm: "SHA1"
-    },
-])
+    }
+]);
 
 function otpObject(entry) {
     return new OTPAuth.TOTP({
@@ -24,7 +24,7 @@ function otpObject(entry) {
         digits: entry.digits,
         period: entry.period,
         algorithm: entry.algorithm
-    })
+    });
 }
 
 function totpCode(entry) {
@@ -41,8 +41,8 @@ const computedEntries = computed(() => {
         ...entry,
         timeLeft: timeLeft(entry.period),
         TOTPCode: totpCode(entry)
-    }))
-})
+    }));
+});
 </script>
 
 <template>
