@@ -21,3 +21,6 @@ const router = createRouter({
 })
 
 export default router
+
+// ok so
+// yikes I still have quite a bit to learn
