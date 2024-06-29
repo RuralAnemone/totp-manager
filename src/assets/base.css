@@ -1,13 +1,20 @@
 /* color palette from <https://github.com/vuejs/theme> */
 :root {
-    --color-primary: #2684ba;
-    /* --color-primary */
-    /* https://coolors.co/67b3e0-154866-ed5a8d-6e0c2f-e0ca00 */
-    --color-secondary: #e0ca00;
-    --color-tertiary: #ca1655;
+    --color-primary-dark: #154866;
+    --color-primary-medium: #2684ba;
+    --color-primary-light: #67b3e0;
+    
+    --color-secondary-dark: #7a6e00;
+    --color-secondary-medium: #e0ca00;
+    --color-secondary-light: #ffed47;
+    
+    --color-tertiary-dark: #6e0c2f;
+    --color-tertiary-medium: #ca1655;
+    --color-tertiary-light: #ed5a8d;
+
     --color-black: #1e1e1f;
     --color-græy-dark: #565657;
-    --color-græy: #8e8e8f;
+    --color-græy-medium: #8e8e8f;
     --color-græy-light: #c6c6c7;
     --color-white: #fefeff;
 }
@@ -19,7 +26,7 @@
     --color-background-mute: var(--color-græy-light);
 
     --color-border: var(--color-græy-light);
-    --color-border-hover: var(--color-græy);
+    --color-border-hover: var(--color-græy-medium);
 
     --color-heading: var(--color-black);
     --color-text: var(--color-black);
@@ -33,8 +40,8 @@
         --color-background-soft: var(--color-græy-dark);
         --color-background-mute: var(--color-græy-dark);
 
-        --color-border: var(--color-græy-light);
-        --color-border-hover: var(--color-white);
+        --color-border: var(--color-græy-dark);
+        --color-border-hover: var(--color-græy-medium);
 
         --color-heading: var(--color-white);
         --color-text: var(--color-white);
