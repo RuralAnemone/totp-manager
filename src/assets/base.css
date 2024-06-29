@@ -1,6 +1,8 @@
 /* color palette from <https://github.com/vuejs/theme> */
 :root {
   --color-primary: #2684ba;
+  /* --color-primary */
+  /* https://coolors.co/67b3e0-154866-ed5a8d-6e0c2f-e0ca00 */
   --color-secondary: #e0ca00;
   --color-tertiary: #ca1655;
   --color-black: #1e1e1f;
