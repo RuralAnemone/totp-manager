@@ -6,7 +6,7 @@ let id = ref(0);
 const entries = ref([
     {
         id: id.value++,
-        secretKey: [...btoa("according to all known laws of aviation,").toUpperCase()].filter(c=>c!=="=").join``,
+        secretKey: [...btoa("according to all known laws of aviation,").toUpperCase()].filter(c=>c!=="=").join(""),
         digits: 6,
         period: 30,
         algorithm: "SHA-1"
