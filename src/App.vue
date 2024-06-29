@@ -1,5 +1,5 @@
-<script setup lang="ts">
-import { RouterView } from "vue-router";
+<script setup>
+import HomeView from '@/components/HomeView.vue';
 </script>
 
 <template>
@@ -7,7 +7,10 @@ import { RouterView } from "vue-router";
         <h1>TOTP Manager</h1>
     </header>
 
-    <RouterView />
+    <main>
+        <HomeView />
+    </main>
+
 </template>
 
 <style scoped>
