@@ -21,6 +21,10 @@
 
 /* semantic color variables for this project */
 :root {
+    --color-primary-dynamic: var(--color-primary-dark);
+    --color-secondary-dynamic: var(--color-secondary-dark);
+    --color-tertiary-dynamic: var(--color-tertiary-dark);
+
     --color-background: var(--color-white);
     --color-background-soft: var(--color-græy-light);
     --color-background-mute: var(--color-græy-light);
@@ -36,6 +40,10 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
+        --color-primary-dynamic: var(--color-primary-light);
+        --color-secondary-dynamic: var(--color-secondary-light);
+        --color-tertiary-dynamic: var(--color-tertiary-light);
+
         --color-background: var(--color-black);
         --color-background-soft: var(--color-græy-dark);
         --color-background-mute: var(--color-græy-dark);
