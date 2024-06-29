@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 import TOTPEntry from "@/components/TOTPEntry.vue"
 import * as OTPAuth from "otpauth";
 
@@ -32,17 +32,24 @@ function totpCode(entry) {
     return config.generate();
 }
 
-function timeLeft(entry) {
-    const config = otpObject(entry);
-    return config.period - (Math.floor(Date.now() / 1000) % config.period);
+function timeLeft(period) {
+    return (period * 1000 - (Math.floor(Date.now()) % (period * 1000))) / 1000;
 }
+
+const computedEntries = computed(() => {
+    return entries.value.map(entry => ({
+        ...entry,
+        timeLeft: timeLeft(entry.period),
+        TOTPCode: totpCode(entry)
+    }))
+})
 </script>
 
 <template>
     <main>
-        <TOTPEntry v-for="entry in entries" :secret-key="entry.secretKey" :digits="entry.digits" :period="entry.period" :algorithm="entry.algorithm" :otpObject="otpObject(entry)" :key="entry.id">
+        <TOTPEntry v-for="entry in computedEntries" :secret-key="entry.secretKey" :digits="entry.digits" :period="entry.period" :algorithm="entry.algorithm" :otpObject="otpObject(entry)" :key="entry.id">
             <p>code: {{ totpCode(entry) }}</p>
-            <p>time left: {{ timeLeft(entry) }}</p>
+            <p>time left: {{ timeLeft(entry.period) }} seconds</p>
         </TOTPEntry>
     </main>
 </template>
