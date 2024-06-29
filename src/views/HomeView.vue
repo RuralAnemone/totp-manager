@@ -1,5 +1,5 @@
 <script setup>
-import { computed, onMounted, ref } from 'vue';
+import { computed, ref } from 'vue';
 import TOTPEntry from "@/components/TOTPEntry.vue"
 import * as OTPAuth from "otpauth";
 
