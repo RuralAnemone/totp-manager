@@ -1,10 +1,14 @@
 <!-- card-like, list of these in a div off to the left (or right? user preference, eventually) -->
 <script setup lang="ts">
+import * as OTPAuth from "otpauth"
     defineProps<{
-        secretKey: String,
-        period: Number,
-        digits: Number,
-        algorithm: String
+        issuer: string,
+        label: string
+        secretKey: string,
+        period: number,
+        digits: number,
+        algorithm: string,
+        otpObject: OTPAuth.TOTP
     }>()
 </script>
 <template>
