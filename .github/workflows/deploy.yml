@@ -22,7 +22,7 @@ jobs:
       # - name: Source Bun
       #   run: source /home/runner/.bashrc
 
-      - name: Install, Lint, Build
+      - name: Install
         uses: oven-sh/setup-bun@v1
       - run: bun install
 
@@ -32,7 +32,7 @@ jobs:
 
       - name: Build
         uses: oven-sh/setup-bun@v1
-      - run: bun build
+      - run: bun run build
         # env:
           # NODE_ENV: production
         
