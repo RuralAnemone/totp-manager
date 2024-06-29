@@ -39,21 +39,21 @@
 }
 
 /* @media (prefers-color-scheme: dark) { */
-    :root {
-        --color-primary: var(--color-primary-light);
-        --color-secondary: var(--color-secondary-light);
-        --color-tertiary: var(--color-tertiary-light);
+:root {
+    --color-primary: var(--color-primary-light);
+    --color-secondary: var(--color-secondary-light);
+    --color-tertiary: var(--color-tertiary-light);
 
-        --color-background: var(--color-black);
-        --color-background-soft: var(--color-græy-dark);
-        --color-background-mute: var(--color-græy-dark);
+    --color-background: var(--color-black);
+    --color-background-soft: var(--color-græy-dark);
+    --color-background-mute: var(--color-græy-dark);
 
-        --color-border: var(--color-græy-dark);
-        --color-border-hover: var(--color-græy-medium);
+    --color-border: var(--color-græy-dark);
+    --color-border-hover: var(--color-græy-medium);
 
-        --color-heading: var(--color-white);
-        --color-text: var(--color-white);
-    }
+    --color-heading: var(--color-white);
+    --color-text: var(--color-white);
+}
 /* } */
 
 *,
@@ -76,14 +76,14 @@ body {
         Inter,
         -apple-system,
         BlinkMacSystemFont,
-        'Segoe UI',
+        "Segoe UI",
         Roboto,
         Oxygen,
         Ubuntu,
         Cantarell,
-        'Fira Sans',
-        'Droid Sans',
-        'Helvetica Neue',
+        "Fira Sans",
+        "Droid Sans",
+        "Helvetica Neue",
         sans-serif;
     font-size: 15px;
     text-rendering: optimizeLegibility;
