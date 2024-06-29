@@ -18,8 +18,8 @@
     --color-background-soft: var(--color-græy-light);
     --color-background-mute: var(--color-græy-light);
 
-    --color-border: var(--color-græy-dark);
-    --color-border-hover: var(--color-black);
+    --color-border: var(--color-græy-light);
+    --color-border-hover: var(--color-græy);
 
     --color-heading: var(--color-black);
     --color-text: var(--color-black);
