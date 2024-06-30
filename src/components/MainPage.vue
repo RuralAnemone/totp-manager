@@ -1,5 +1,5 @@
 <script setup>
-import { computed, ref } from "vue";
+import { watch, ref } from "vue";
 import TOTPEntry from "@/components/TOTPEntry.vue";
 import * as OTPAuth from "otpauth";
 
@@ -36,19 +36,23 @@ function timeLeft(period) {
     return (period * 1000 - (Math.floor(Date.now()) % (period * 1000))) / 1000;
 }
 
-const computedEntries = computed(() => {
-    return entries.value.map(entry => ({
-        ...entry,
-        timeLeft: timeLeft(entry.period),
-        TOTPCode: totpCode(entry)
-    }));
-});
+// const computedEntries = computed(() => {
+//     return entries.value.map(entry => ({
+//         ...entry,
+//         timeLeft: timeLeft(entry.period),
+//         TOTPCode: totpCode(entry)
+//     }));
+// });
+
+setInterval(() => {
+    pCodeRef.value.textContent = `code: ${totpCode()}`
+}, 100)
 </script>
 
 <template>
     <main>
         <TOTPEntry
-            v-for="entry in computedEntries"
+            v-for="entry in entries"
             :secret-key="entry.secretKey"
             :digits="entry.digits"
             :period="entry.period"
@@ -56,8 +60,8 @@ const computedEntries = computed(() => {
             :otpObject="otpObject(entry)"
             :key="entry.id"
         >
-            <p>code: {{ totpCode(entry) }}</p>
-            <p>time left: {{ timeLeft(entry.period) }} seconds</p>
+            <p ref="pCodeRef">code: {{ totpCode(entry) }}</p>
+            <p ref="pTimeLeftRef">time left: {{ timeLeft(entry.period) }} seconds</p>
         </TOTPEntry>
     </main>
 </template>
