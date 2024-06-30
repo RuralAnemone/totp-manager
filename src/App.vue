@@ -1,5 +1,5 @@
 <script setup>
-import HomeView from "@/components/HomeView.vue";
+import MainPage from "@/components/MainPage.vue";
 </script>
 
 <template>
@@ -8,7 +8,7 @@ import HomeView from "@/components/HomeView.vue";
     </header>
 
     <main>
-        <HomeView />
+        <MainPage />
     </main>
 </template>
 
