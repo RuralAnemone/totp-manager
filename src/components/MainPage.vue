@@ -47,7 +47,15 @@ const computedEntries = computed(() => {
 
 <template>
     <main>
-        <TOTPEntry v-for="entry in computedEntries" :secret-key="entry.secretKey" :digits="entry.digits" :period="entry.period" :algorithm="entry.algorithm" :otpObject="otpObject(entry)" :key="entry.id">
+        <TOTPEntry
+            v-for="entry in computedEntries"
+            :secret-key="entry.secretKey"
+            :digits="entry.digits"
+            :period="entry.period"
+            :algorithm="entry.algorithm"
+            :otpObject="otpObject(entry)"
+            :key="entry.id"
+        >
             <p>code: {{ totpCode(entry) }}</p>
             <p>time left: {{ timeLeft(entry.period) }} seconds</p>
         </TOTPEntry>
