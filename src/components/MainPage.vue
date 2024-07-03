@@ -1,7 +1,13 @@
 <script setup>
-import { watch, ref } from "vue";
+import { ref } from "vue";
 import TOTPEntry from "@/components/TOTPEntry.vue";
 import * as OTPAuth from "otpauth";
+
+let now = ref(Date.now());
+
+setInterval(() => {
+    now.value = Date.now();
+})
 
 let id = ref(0);
 const entries = ref([
@@ -33,7 +39,7 @@ function totpCode(entry) {
 }
 
 function timeLeft(period) {
-    return (period * 1000 - (Math.floor(Date.now()) % (period * 1000))) / 1000;
+    return (period * 1000 - (Math.floor(now.value) % (period * 1000))) / 1000;
 }
 
 // const computedEntries = computed(() => {
@@ -44,9 +50,9 @@ function timeLeft(period) {
 //     }));
 // });
 
-setInterval(() => {
-    pCodeRef.value.textContent = `code: ${totpCode()}`
-}, 100)
+// setInterval(() => {
+//     pCodeRef.value.textContent = `code: ${totpCode()}`
+// }, 100)
 </script>
 
 <template>
@@ -60,8 +66,8 @@ setInterval(() => {
             :otpObject="otpObject(entry)"
             :key="entry.id"
         >
-            <p ref="pCodeRef">code: {{ totpCode(entry) }}</p>
-            <p ref="pTimeLeftRef">time left: {{ timeLeft(entry.period) }} seconds</p>
+            <p>code: {{ totpCode(entry) }}</p>
+            <p>time left: {{ timeLeft(entry.period) }} seconds {{ now }}</p>
         </TOTPEntry>
     </main>
 </template>
