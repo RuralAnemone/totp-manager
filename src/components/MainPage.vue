@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from "vue";
 import TOTPEntry from "@/components/TOTPEntry.vue";
+import TOTPInput from "@/components/TOTPInput.vue";
 import * as OTPAuth from "otpauth";
 
 let now = ref(Date.now());
@@ -66,6 +67,7 @@ function timeLeft(period) {
 
 <template>
     <main>
+        <TOTPInput />
         <TOTPEntry
             v-for="entry in entries"
             :secret-key="entry.secretKey"
