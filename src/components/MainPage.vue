@@ -8,7 +8,7 @@ let now = ref(Date.now());
 
 setInterval(() => {
     now.value = Date.now();
-})
+});
 
 let id = ref(0);
 const entries = ref([

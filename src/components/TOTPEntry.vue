@@ -12,7 +12,7 @@ defineProps({
 });
 </script>
 <template>
-    <hr>
+    <hr />
     <p>
         <slot></slot>
     </p>
