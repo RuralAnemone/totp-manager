@@ -68,6 +68,7 @@ function timeLeft(period) {
         >
             <p>code: {{ totpCode(entry) }}</p>
             <p>time left: {{ timeLeft(entry.period) }} seconds {{ now }}</p>
+            <progress min="0" :max="entry.period" :value="timeLeft(entry.period)"></progress>
         </TOTPEntry>
     </main>
 </template>
