@@ -19,6 +19,15 @@ const entries = ref([
         digits: 6,
         period: 30,
         algorithm: "SHA1"
+    },
+    {
+        id: id.value++,
+        issuer: "the bean man, llc",
+        label: "test totp config #3",
+        secretKey: btoa("amogus sus :0").toUpperCase().replaceAll(1, 2).replaceAll("=", ""),
+        digits: 8,
+        period: 16,
+        algorithm: "SHA1"
     }
 ]);
 
