@@ -21,25 +21,6 @@
 
 /* semantic color variables for this project */
 :root {
-    --color-primary: var(--color-primary-dark);
-    --color-secondary: var(--color-secondary-dark);
-    --color-tertiary: var(--color-tertiary-dark);
-
-    --color-background: var(--color-white);
-    --color-background-soft: var(--color-græy-light);
-    --color-background-mute: var(--color-græy-light);
-
-    --color-border: var(--color-græy-light);
-    --color-border-hover: var(--color-græy-medium);
-
-    --color-heading: var(--color-black);
-    --color-text: var(--color-black);
-
-    --section-gap: 160px;
-}
-
-/* @media (prefers-color-scheme: dark) { */
-:root {
     --color-primary: var(--color-primary-light);
     --color-secondary: var(--color-secondary-light);
     --color-tertiary: var(--color-tertiary-light);
@@ -53,8 +34,27 @@
 
     --color-heading: var(--color-white);
     --color-text: var(--color-white);
+
+    --section-gap: 160px;
 }
-/* } */
+
+@media (prefers-color-scheme: light) {
+:root {
+    --color-primary: var(--color-primary-dark);
+    --color-secondary: var(--color-secondary-dark);
+    --color-tertiary: var(--color-tertiary-dark);
+
+    --color-background: var(--color-white);
+    --color-background-soft: var(--color-græy-light);
+    --color-background-mute: var(--color-græy-light);
+
+    --color-border: var(--color-græy-light);
+    --color-border-hover: var(--color-græy-medium);
+
+    --color-heading: var(--color-black);
+    --color-text: var(--color-black);
+}
+}
 
 *,
 *::before,
