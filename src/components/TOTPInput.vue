@@ -1,7 +1,7 @@
 <script setup>
 import { computed, ref } from 'vue';
 
-const emit = defineEmits(['new-code']);
+const emit = defineEmits(['newCode']);
 
 let totpCode = ref('');
 let disabled = computed(() => {
@@ -13,7 +13,8 @@ let disabled = computed(() => {
 
 
 function handleNewEntry() {
-    emit("new-code", {
+    console.debug("emitting")
+    emit("newCode", {
         issuer: "ACME",
         label: "test",
         secret: totpCode.value,

@@ -65,13 +65,14 @@ function timeLeft(period) {
 // }, 100)
 
 function handleNewCode(data) {
+    console.debug("emit received");
     entries.value.push(data);
 }
 </script>
 
 <template>
     <main>
-        <TOTPInput @new-code="(data) => handleNewCode" />
+        <TOTPInput @newCode="(data) => handleNewCode" />
         <TOTPEntry
             v-for="entry in entries"
             :secret-key="entry.secretKey"
