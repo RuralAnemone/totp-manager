@@ -65,8 +65,11 @@ function timeLeft(period) {
 // }, 100)
 
 function handleNewCode(data) {
-    console.debug("emit received");
-    entries.value.push(data);
+    entries.value.push({
+        id: id.value++,
+        ...data
+    });
+    console.debug("emit received", entries.value);
 }
 </script>
 
