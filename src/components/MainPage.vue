@@ -75,7 +75,7 @@ function handleNewCode(data) {
 
 <template>
     <main>
-        <TOTPInput @newCode="(data) => handleNewCode(data)" />
+        <TOTPInput @newCode="data => handleNewCode(data)" />
         <TOTPEntry
             v-for="entry in entries"
             :secret-key="entry.secretKey"
