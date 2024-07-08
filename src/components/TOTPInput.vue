@@ -1,6 +1,8 @@
 <script setup>
 import { computed, ref } from 'vue';
-// let disabled =
+
+const emit = defineEmits(['new-code']);
+
 let totpCode = ref('');
 let disabled = computed(() => {
     return totpCode.value.length <= 0;
@@ -11,7 +13,14 @@ let disabled = computed(() => {
 
 
 function handleNewEntry() {
-    // emit an object back to parent
+    emit("new-code", {
+        issuer: "ACME",
+        label: "test",
+        secret: totpCode.value,
+        digits: 6,
+        period: 30,
+        algorithm: "SHA1"
+    })
 }
 </script>
 

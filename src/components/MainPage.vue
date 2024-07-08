@@ -28,7 +28,7 @@ const entries = ref([
         secretKey: btoa("amogus sus :0").toUpperCase().replaceAll(1, 2).replaceAll("=", ""),
         digits: 8,
         period: 16,
-        algorithm: "SHA1"
+        algorithm: "SHA256"
     }
 ]);
 
@@ -63,11 +63,15 @@ function timeLeft(period) {
 // setInterval(() => {
 //     pCodeRef.value.textContent = `code: ${totpCode()}`
 // }, 100)
+
+function handleNewCode(data) {
+    entries.value.push(data);
+}
 </script>
 
 <template>
     <main>
-        <TOTPInput />
+        <TOTPInput @new-code="(data) => handleNewCode" />
         <TOTPEntry
             v-for="entry in entries"
             :secret-key="entry.secretKey"
