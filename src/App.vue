@@ -8,7 +8,9 @@ import MainPage from "@/components/MainPage.vue";
     </header>
 
     <main>
-        <MainPage />
+        <div class="main-page">
+            <MainPage />
+        </div>
     </main>
 </template>
 
